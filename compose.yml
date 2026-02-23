@@ -64,8 +64,8 @@ services:
     restart: always
     env_file: .env.web
     ports:
-      - "80:80"
-      - "443:443"
+      - "13080:80"
+      - "13443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./data/caddy-data:/data
@@ -209,7 +209,7 @@ services:
     build: ./.admin-panel
     restart: always
     ports:
-      - "3000:3000"
+      - "13000:3000"
     environment:
       - REDIS=redis://redis:6379
       - MONGODB=mongodb://database:27017
